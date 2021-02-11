@@ -1,0 +1,1204 @@
+.world
+    display: flex
+    flex-direction: row
+    justify-content: flex-end
+    width: 100%
+    height: 100vh
+    transition: .5s
+    position: relative
+    overflow: hidden
+    z-index: 1
+    background-image: url('../img/world/header-bg.jpg')
+    background-size: cover
+    background-repeat: no-repeat
+    &-content
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        height: 110vh
+        width: 67vw
+        max-height: 1080px
+        padding-top: 250px
+        clip-path: polygon(51% 0, 100% 0%, 100% 100%, 0% 100%)
+        background-color: rgba(7, 7, 8, 0.8)
+        z-index: 10
+        opacity: 1
+        transition: all .5s ease
+        position: relative
+        .title
+            transform: translateX(22%)
+            max-width: 550px
+            margin-bottom: 35px
+        .subtitle
+            color: #fff
+            transform: translateX(27%)
+            margin-bottom: 65px
+    &-menu
+        transform: translateX(27%)
+        transition: all .6s
+        .menu
+            li
+                display: inline-block
+                margin: 0 17.5px
+                .button
+                    display: flex
+                    flex-direction: row
+                    justify-content: center
+                    align-items: center
+                    color: #000
+                    font-size: 16px
+                    width: 295px
+                    height: 45px
+                    max-width: 100%
+                    margin-left: 0
+                    line-height: 40px
+                    text-transform: uppercase
+                    background-size: 100% 100%
+                    background-repeat: no-repeat
+                    position: relative
+                    z-index: 1
+                    img
+                        display: inline
+                        height: 30px
+                        width: auto
+                        vertical-align: bottom
+                        margin-right: 18px
+                        margin-bottom: 4px
+                    &:after
+                        content: ''
+                        position: absolute
+                        left: unset
+                        top: unset
+                        right: -4px
+                        bottom: -4px
+                        display: block
+                        width: 100%
+                        height: 100%
+                        background-size: cover
+                        background-repeat: no-repeat
+                        z-index: 2
+                    &:hover
+                        background-image: url('../img/interface/main-button-b.svg')
+                        color: $orange
+                        img
+                            filter: invert(1)
+                .button-w
+                    background-image: url('../img/interface/main-button-w.svg')
+                    &:after
+                        background: url('../img/interface/main-menu-o.svg')
+                .button-o
+                    background-image: url('../img/interface/main-button-o.svg')
+                    &:after
+                        background: url('../img/interface/main-menu-w.svg')
+                    &:hover:after
+                        background-immage: url('../img/interface/main-menu-o.svg')
+.geo
+    display: block
+    height: 100vh
+    width: 100%
+    background-image: url('../img/world/geoscape/bg.jpg')
+    background-size: cover
+    background-repeat: no-repeat
+    position: relative
+    .block-sliders
+        .blocks
+            position: absolute
+            top: 33%
+            left: 11%
+            z-index: 5
+            .block
+                display: flex
+                flex-direction: column
+                align-items: flex-end
+                width: 500px
+                height: 320px
+                padding-top: 70px
+                background-color: rgba(7, 7, 8, 0.8)
+                opacity: 0
+                transition: .4s
+                position: absolute
+                transform: skewX(-35deg)
+                .title
+                    width: 70%
+                    font-size: 24px
+                    font-weight: 600
+                    line-height: 28px
+                    margin-bottom: 40px
+                    margin-right: 80px
+                    transform: skewX(35deg)
+                    position: relative
+                    &:after
+                        content: ''
+                        position: absolute
+                        bottom: -20px
+                        left: -8%
+                        display: block
+                        width: 90%
+                        height: 1px
+                        background-color: $orange
+                .description
+                    width: 70%
+                    margin-right: 80px
+                    font-size: 16px
+                    font-family: 'Purista Medium'
+                    line-height: 21px
+                    color: #fff
+                    transform: skewX(35deg) translateX(17%)
+                .numbers
+                    position: absolute
+                    top: 30px
+                    left: 35px
+                    line-height: 24px
+                    color: #fff
+                    transform: skewX(35deg)
+                    .number
+                        display: inline-block
+                        &:first-child
+                            padding-right: 55px
+                            position: relative
+                            &::after
+                                content: ''
+                                position: absolute
+                                right: 3px
+                                top: 11px
+                                width: 40px
+                                height: 1px
+                                background: $lightgrey
+                .arrows
+                    position: absolute
+                    bottom: 38px
+                    left: 175px
+                    transform: skewX(35deg)
+                    display: flex
+                    justify-content: space-between
+                    width: 61px
+                    .arrow
+                        display: flex
+                        cursor: pointer
+                        &:first-child
+                            position: relative
+                            &::after
+                                content: ''
+                                position: absolute
+                                left: 30px
+                                top: -15px
+                                width: 1px
+                                height: 50px
+                                background: $orange
+                        &:last-child
+                            transform: rotate(180deg)
+        .slider-wrapper
+            display: block
+            width: 43.5%
+            height: fit-content
+            position: absolute
+            left: 50%
+            top: 50%
+            transform: translateX(-50%) translateY(-50%)
+            .slider-bg
+                width: 100%
+                height: 100%
+            .navigation
+                position: absolute
+                top: 0
+                width: 100%
+                height: 100%
+                display: block
+                z-index: 5
+                .thumb
+                    display: block
+                    width: 70px
+                    height: 70px
+                    background-image: url('../img/world/geoscape/thumb.svg')
+                    background-size: cover
+                    background-repeat: no-repeat
+                    position: absolute
+                    transition: .3s
+                    &:nth-child(1)
+                        top: 30%
+                        left: 80%
+                    &:nth-child(2)
+                        top: 55%
+                        left: 45.5%
+                    &:hover
+                        transform: scale(1.1)
+            .slides
+                display: block
+                position: absolute
+                top: 0
+                width: 100%
+                height: 100%
+                .slide
+                    width: 19vw
+                    height: fit-content
+                    border-radius: 50%
+                    box-sizing: content-box
+                    position: absolute
+                    opacity: 0
+                    transition: opacity .5s, transform 1s
+                    transform: scale(0.2)
+                    transform-origin: center
+                    cursor: pointer
+                    &:hover
+                        transition: opacity .5s, transform .5s
+                        transform: scale(1.3) !important
+                    &:after
+                        content: ''
+                        position: absolute
+                        left: -3.5%
+                        top: -3.5%
+                        display: block
+                        width: 107%
+                        height: 107%
+                        border-radius: 50%
+                        background-color: #000
+                        box-shadow: -7px 7px 16px 0 rgba(0, 0, 0, 0.5)
+                        z-index: -1
+                    &:nth-child(1)
+                        top: 12%
+                        left: 69%
+                    &:nth-child(2)
+                        top: 42%
+                        left: 32%
+                    img
+                        width: 100%
+                        height: 100%
+                    
+
+    .block-sliders.active-1
+        .blocks
+            .block:nth-child(1)
+                opacity: 1
+                z-index: 10
+        .slides
+            .slide:nth-child(1)
+                opacity: 1
+                transform: scale(1)
+                z-index: 10
+    .block-sliders.active-2
+        .blocks
+            .block:nth-child(2)
+                z-index: 10
+                opacity: 1
+        .slides
+            .slide:nth-child(2)
+                opacity: 1
+                transform: scale(1)
+                z-index: 10
+.backstory
+    display: block
+    height: 100vh
+    width: 100%
+    background-image: url('../img/world/backstory/bg.jpg')
+    background-size: cover
+    background-repeat: no-repeat
+    position: relative
+    &:after
+        content: ''
+        display: block
+        width: 100%
+        height: 1px
+        background-color: $orange
+        position: absolute
+        left: 0
+        bottom: 30%
+        z-index: 2
+    .men
+        position: absolute
+        bottom: 0
+        left: 0
+        display: block
+        height: auto
+        width: 33vw
+        z-index: 3
+        user-select: none
+        pointer-events: none
+    .heading
+        position: absolute
+        bottom: 55%
+        right: 8%
+        max-width: 650px
+        .title
+            margin-bottom: 65px
+        .description
+            font-size: 18px
+            font-family: 'Purista Medium'
+            line-height: 24px
+            color: #fff
+    .blocks
+        display: flex
+        flex-direction: row
+        justify-content: flex-end
+        padding-right: 10%
+        flex-wrap: wrap
+        width: 100%
+        position: absolute
+        bottom: 19%
+        left: 0
+        z-index: 10
+        a
+            display: block
+            width: 449px
+            height: 223px
+            margin: 0 -2%
+            position: relative
+            &:before
+                content: ''
+                position: absolute
+                right: -5%
+                top: -7%
+                display: block
+                width: 100%
+                height: 100%
+                background-image: url('../img/homepage/discover/corner.svg')
+                background-size: 100% 100%
+                background-repeat: no-repeat
+                z-index: 2
+                pointer-events: none
+                user-select: none
+            .block
+                display: block
+                width: 100%
+                height: 100%
+                clip-path: polygon(31% 1%, 99% 1%, 70% 100%, 1% 100%)
+                background-size: 100% 100%
+                background-repeat: no-repeat
+                position: relative
+                &:hover
+                    .link:after
+                        width: 100%
+                    img
+                        transform: scale(1.3)
+                &-img
+                    display: block
+                    position: absolute
+                    left: 0
+                    top: 0
+                    width: 100%
+                    height: 100%
+                    z-index: -1
+                    img
+                        display: block
+                        width: 100%
+                        height: 100%
+                        transition: .5s
+                .link
+                    position: absolute
+                    bottom: 30px
+                    left: 40%
+                    transform: translateX(-50%)
+                    z-index: 4
+                    &:after
+                        content: ''
+                        position: absolute
+                        bottom: -6px
+                        display: block
+                        width: 0%
+                        height: 1px
+                        transition: .3s
+                        background-color: $orange
+
+.equipment
+    display: block
+    height: 115vh
+    width: 100%
+    position: relative
+    background-image: url('../img/world/equipment/bg.jpg')
+    background-size: cover
+    background-repeat: no-repeat
+    .button-o
+        position: absolute
+        bottom: 5%
+        left: 50%
+        transform: translateX(-50%)
+        z-index: 25
+    .heading
+        position: absolute
+        top: 14%
+        left: 8%
+        z-index: 5
+        .title
+        .subtitle
+            color: #fff
+            margin-bottom: 13px
+    .block-slider
+        position: absolute
+        left: 0
+        top: 0
+        width: 100%
+        height: 100%
+        .navigation
+            display: flex
+            flex-direction: row
+            position: absolute
+            right: 7%
+            top: 17%
+            z-index: 25
+            .thumb
+                display: block
+                width: 250px
+                height: 81px
+                text-align: center
+                margin: 0 15px
+                background: #070708
+                border: 1px solid #b7b7b7
+                border-top: 0
+                position: relative
+                transform: skewX(-30deg)
+                transition: .3s
+                z-index: 1
+                &:before
+                    content: ''
+                    display: block
+                    width: 15%
+                    height: 1px
+                    background-color: #b7b7b7
+                    position: absolute
+                    left: 0
+                    top: 0
+                &:after
+                    content: ''
+                    display: block
+                    width: 30%
+                    height: 1px
+                    background-color: #b7b7b7
+                    position: absolute
+                    right: 0
+                    top: 0
+                &-text
+                    font-size: 24px
+                    color: #b7b7b7
+                    text-transform: uppercase
+                    transform: skewX(30deg)
+                object
+                    transform: skewX(30deg) translateY(-50%) translateX(-35%)
+                    fill: $orange
+                    transition: .3s
+        .slider
+            position: relative
+            width: 100%
+            height: 100%
+            .slider-wrapper
+                position: absolute
+                top: 26.5%
+                right: 0
+                width: 97%
+                .navigation-progress
+                    position: relative
+                    .navbar
+                        width: 97vw
+                        height: auto
+                    .nav-thumb
+                        position: absolute
+                        top: 0
+                        display: block
+                        width: 10px
+                        height: 10px
+                        background-color: #fff
+                        z-index: 15
+                        transform: rotate(45deg) translateY(-50%)
+                    .current-icon
+                        position: absolute
+                        top: 0
+                        display: inline-block
+                        width: 10px
+                        height: 10px
+                        background: #ffa700
+                        border: 10px solid #000
+                        box-shadow: 0 0 1px #ffa700
+                        transform: translateY(-50%) rotate(45deg)
+                        z-index: 16
+                        transition: .5s
+                    .nav-thumb:nth-child(2)
+                        right: 60.1%
+                    .nav-thumb:nth-child(3)
+                        right: 44.6%
+                    .nav-thumb:nth-child(4)
+                        right: 29.5%
+                    .nav-thumb:nth-child(5)
+                        right: 14.5%
+                .back
+                    position: absolute
+                    top: 20%
+                    left: 50%
+                    transform: translateX(-45%)
+                    width: 48vw
+                    height: auto
+                .left
+                    position: absolute
+                    top: 49%
+                    left: 13%
+                    width: 27vw
+                    height: auto
+                .center
+                    position: absolute
+                    top: 36%
+                    left: 35.5%
+                    width: 33vw
+                    height: auto
+                .right
+                    position: absolute
+                    top: 49%
+                    right: 9.1%
+                    width: 27vw
+                    height: auto
+                &:after
+                    content: ''
+                    position: absolute
+                    right: -84.6%
+                    bottom: 0
+                    display: block
+                    width: 100%
+                    height: 1px
+                    background-color: $orange
+            .slides
+                display: block
+                width: 100%
+                position: absolute
+                top: 32%
+                z-index: 15
+                .slide
+                    display: flex
+                    flex-direction: row
+                    align-items: baseline
+                    justify-content: flex-start
+                    width: 80%
+                    position: absolute
+                    left: 15%
+                    opacity: 0
+                    .block
+                        display: flex
+                        flex-direction: column
+                        img
+                            height: auto
+                            margin-bottom: 40px
+                        .title
+                            font-size: 24px
+                            margin-bottom: 15px
+                        .description
+                            font-family: 'Purista Medium'
+                            color: #fff
+                            max-width: 370px
+                            line-height: 21px
+                    .block:nth-child(1)
+                        width: 24%
+                        margin-right: 2%
+                        img
+                            width: 274px
+                            margin-left: 10%
+                    .block:nth-child(2)
+                        justify-content: center
+                        width: 40.5%
+                        margin-right: 2%
+                        img
+                            width: 622px
+                        .title
+                            margin-left: 25%
+                        .description
+                            margin-left: 25%
+                    .block:nth-child(3)
+                        width: 24%
+                        img
+                            width: 220px
+                            margin-left: 15%
+    .block-slider.active-1
+        .navigation
+            .thumb:nth-child(1)
+                border: 1px solid $orange
+                border-top: 0
+                &:after, &:before
+                    background-color: $orange
+                object
+                    filter: invert(30%) sepia(51%) saturate(2878%)
+                .thumb-text
+                    color: $orange
+        .slide:nth-child(1)
+            opacity: 1
+            z-index: 20
+        .current-icon
+            right: 59.1%
+    .block-slider.active-2
+        .navigation
+            .thumb:nth-child(2)
+                border: 1px solid $orange
+                border-top: 0
+                &:after, &:before
+                    background-color: $orange
+                object
+                    filter: invert(30%) sepia(51%) saturate(2878%)
+                .thumb-text
+                    color: $orange
+        .slide:nth-child(2)
+            opacity: 1
+            z-index: 20
+        .current-icon
+            right: 43.6%
+    .block-slider.active-3
+        .navigation
+            .thumb:nth-child(3)
+                border: 1px solid $orange
+                border-top: 0
+                &:after, &:before
+                    background-color: $orange
+                object
+                    filter: invert(30%) sepia(51%) saturate(2878%)
+                .thumb-text
+                    color: $orange
+        .slide:nth-child(3)
+            opacity: 1
+            z-index: 20
+        .current-icon
+            right: 28.5%
+    .block-slider.active-4
+        .navigation
+            .thumb:nth-child(4)
+                border: 1px solid $orange
+                border-top: 0
+                &:after, &:before
+                    background-color: $orange
+                object
+                    filter: invert(30%) sepia(51%) saturate(2878%)
+                .thumb-text
+                    color: $orange
+        .slide:nth-child(4)
+            opacity: 1
+            z-index: 20
+        .current-icon
+            right: 13.5%
+.wiki
+    display: block
+    height: 900px
+    width: 100%
+    background: linear-gradient(#e2e2e2bd 30%, rgba(255,255,255,1) 70%)
+    position: relative
+    &:after
+        content: ''
+        display: block
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+        background-image: url('../img/src/light-bg.png') 
+        background-size: 100%
+        background-repeat: no-repeat
+        background-position-y: -50px
+    &:before
+        content: ''
+        position: absolute
+        top: -1px
+        height: 51px
+        left: 0
+        background-color: #070708
+        width: 60%
+        clip-path: polygon(0 0, 100% 0, 97% 100%, 0% 100%)
+        z-index: 5
+    &-image
+        display: block
+        width: 22%
+        height: auto
+        position: absolute
+        top: 20%
+        left: 10%
+        z-index: 5
+        user-select: none
+        pointer-events: none
+        img
+            width: 100%
+            height: auto
+            clip-path: polygon(0 0, 100% 6.5%, 100% 100%, 0% 100%)
+        &:before
+            content: ''
+            display: block
+            width: 100%
+            height: 100%
+            position: absolute
+            left: -25px
+            top: -25px
+            border: 1px solid black
+            transform: perspective(500px) rotateY(13deg)
+    &-content
+        display: block
+        position: absolute
+        top: 35%
+        left: 40%
+        z-index: 5
+        width: 33.5%
+        .subtitle
+            margin-bottom: 33px
+            padding-bottom: 32px
+            border-bottom: 2px solid black
+        .description
+            font-family: 'Purista Medium'
+            font-size: 18px
+            line-height: 21px
+            padding-right: 17%
+            margin-bottom: 65px
+        .button-o
+            color: #ffa700
+            background-image: url(../img/interface/button-b.svg)
+            &:after
+                background-image: url('../img/interface/button-after_hover.svg')
+            &:hover
+                background-image: url(../img/interface/button-o.svg)
+                color: #000
+                &::after
+                    background-image: url('../img/interface/button-after.svg')
+    &-sniper
+        position: absolute
+        bottom: 0
+        right: 5%
+        z-index: 4
+        display: block
+        height: 51%
+        width: auto
+
+@media (max-width: 1600px)
+    .world
+        &-content
+            padding-top: 120px
+            .title
+                font-size: 60px
+            .subtitle
+                font-size: 18px
+                transform: translateX(26%)
+        &-menu
+            transform: translateX(24%)
+            .menu
+                li
+                    .button
+                        width: 210px
+                        height: 37px
+                        img
+                            height: 20px
+                            margin-right: 18px
+                            margin-bottom: -3px
+                        &:after
+                            background-size: 100% 100%
+    .geo .block-sliders
+        .blocks 
+            top: 20%
+            left: 7%    
+    .backstory
+        height: 700px
+        .men
+            width: 30vw
+        .heading
+            max-width: 550px
+        .blocks
+            padding-right: 7%
+            a
+                width: 320px
+                height: 160px
+    .equipment
+        height: 870px
+        .heading
+            .subtitle
+                font-size: 16px
+            .title
+                font-size: 50px
+        .block-slider
+            .navigation
+                right: 70px
+                .thumb
+                    width: 150px
+                    height: 60px
+                    &-text
+                        font-size: 15px
+                    object
+                        transform: skewX(30deg) translateY(-50%) translateX(-15%)
+            .slider
+                .slider-wrapper .navigation-progress
+                    .nav-thumb:nth-child(2)
+                        right: 160px
+                    .nav-thumb:nth-child(3)
+                        right: 340px
+                    .nav-thumb:nth-child(4)
+                        right: 520px
+                    .nav-thumb:nth-child(5)
+                        right: 700px
+                .slides
+                    .slide
+                        .block
+                            .title
+                                font-size: 20px
+                            .description
+                                font-size: 16px
+                        .block:nth-child(1)
+                            img
+                                width: 200px
+                        .block:nth-child(2)
+                            width: 40%
+                            margin-right: 3%
+                            img
+                                width: 400px
+                            .title
+                                margin-left: 10%
+                            .description
+                                margin-left: 10%
+                        .block:nth-child(3)
+                            img
+                                width: 200px
+        .block-slider.active-1
+            .slide:nth-child(1)
+                transform: translateY(-10%)
+            .current-icon
+                right: 690px
+        .block-slider.active-2
+            .slide:nth-child(2)
+                transform: translateY(3%)
+            .current-icon
+                right: 510px
+        .block-slider.active-3
+            .current-icon
+                right: 330px
+        .block-slider.active-4
+            .current-icon
+                right: 150px
+    
+@media (max-width: 1400px)
+    .geo .block-sliders .blocks
+        .block
+            width: 400px
+            height: 280px
+            .title
+                width: 62%
+                font-size: 18px
+                line-height: 24px
+            .description
+                width: 62%
+                margin-right: 60px
+                font-size: 12px
+                line-height: 16px
+            .arrows
+                bottom: 30px
+                .arrow
+                    &:first-child
+                        position: relative
+                        &::after
+                            top: -12px
+                            width: 1px
+                            height: 40px
+                    &:last-child
+                        transform: rotate(180deg)
+    
+    .wiki
+        height: 700px
+        &-image
+            width: 26%
+            top: 20%
+            left: 5%
+        &-content
+            top: 35%
+            left: 40%
+            width: 33%
+            .subtitle
+                font-size: 17px
+                margin-bottom: 28px
+                padding-bottom: 28px
+                padding-right: 10%
+            .description
+                font-size: 13px
+                line-height: 18px
+                padding-right: 10%
+                margin-bottom: 45px
+            .button-o
+                padding: 10px 30px
+                font-size: 14px
+                
+        &-sniper
+            height: 40%
+
+@media (max-width: 980px)
+    .world
+        &-content
+            width: 100%
+            height: 100%
+            padding-top: 80px
+            background: transparent
+            clip-path: none
+            justify-content: flex-end
+            .title
+                transform: none
+                width: 350px
+                text-align: center
+                margin-bottom: 25px
+            .subtitle
+                width: 350px
+                font-size: 22px
+                line-height: 28px
+                text-align: center
+                transform: none
+                margin-bottom: 35px
+        &-menu
+            transform: none
+            .menu
+                li
+                    width: 100%
+                    margin: 0
+                    .button
+                        width: 100%
+                        height: 45px
+                        padding: 0
+                        margin-bottom: 25px
+                        img
+                            height: 30px
+                            margin-right: 18px
+                            margin-bottom: 0
+    .geo .block-sliders 
+        .blocks
+            top: auto
+            bottom: 210px
+            left: 50%
+            margin-left: -150px
+            .block
+                width: 300px
+                height: 180px
+                transform: skewX(-28deg)
+                padding-top: 35px
+                .title
+                    width: 72%
+                    margin-right: 30px
+                    margin-bottom: 20px
+                    font-size: 16px
+                    line-height: 20px
+                    transform: skewX(28deg)
+                    &::after
+                        bottom: -10px
+                .description
+                    width: 60%
+                    margin-right: 30px
+                    font-size: 10px
+                    line-height: 13px
+                    transform: skewX(28deg)
+                .numbers
+                    transform: skewX(28deg)
+                    top: 5px
+                .arrows
+                    bottom: 10px
+                    left: 115px
+                    width: 40px
+                    transform: skewX(28deg)
+                    .arrow
+                        width: 10px
+                        height: 10px
+                        &:first-child
+                            &::after
+                                top: -6px
+                                left: 20px
+                                width: 1px
+                                height: 22px
+        .slider-wrapper
+            width: 80%
+            top: 40%
+            .navigation
+                .thumb
+                    &:nth-child(1)
+                        top: 8%
+                        left: 62%
+                    &:nth-child(2)
+                        top: 70%
+                        left: 40%
+            .slides
+                .slide
+                    width: 50vw
+                    &:nth-child(1)
+                        top: -16%
+                        left: 45%
+                    &:nth-child(2)
+                        top: 50%
+                        left: 18%
+                    img
+                        width: 100%
+                        height: 100%
+    .backstory
+        height: 1285px
+        &::after
+            display: none
+        .men
+            width: auto
+            height: 334px
+            bottom: auto
+            top: 340px
+        .heading
+            width: 100%
+            max-width: 100%
+            bottom: auto
+            top: 45px
+            padding: 0 5%
+            right: auto
+            text-align: center
+            .title
+                margin-bottom: 30px
+                font-size: 58px
+        .blocks
+            padding-right: 0
+            flex-direction: column
+            align-items: center
+            bottom: 0
+            a
+                width: 320px
+                height: 160px
+                margin-right: 15px
+                margin-bottom: 40px
+                .block .link
+                    bottom: 20px
+    .equipment
+        height: 1100px
+        .heading
+            width: 100%
+            max-width: 100%
+            bottom: auto
+            top: 45px
+            left: auto
+            padding: 0 5%
+            right: auto
+            text-align: center
+        .block-slider
+            .navigation
+                right: 0
+                width: 100%
+                justify-content: space-between
+                .thumb
+                    width: 60px
+                    height: 60px
+                    border: none
+                    background: transparent
+                    transform: none
+                    border-radius: 50%
+                    &::before
+                        display: none
+                    &::after
+                        display: none
+                    &-text
+                        display: none
+                    object
+                        transform: translateY(13px)
+            .slider
+                .slider-wrapper 
+                    width: 100%
+                    object
+                        display: none
+                    &::after
+                        display: none
+                    .navigation-progress
+                        &:after
+                            content: ''
+                            display: block
+                            width: 100%
+                            height: 1px
+                            position: absolute
+                            left: 0
+                            bottom: -2px
+                            background-color: $orange
+                        .nav-thumb                          
+                        .nav-thumb:nth-child(2)
+                            right: 11%
+                        .nav-thumb:nth-child(3)
+                            right: 37%
+                        .nav-thumb:nth-child(4)
+                            right: 63%
+                        .nav-thumb:nth-child(5)
+                            right: 89%
+                .slides
+                    left: -5%
+                    .slide
+                        align-items: flex-start
+                        .block
+                            .title
+                                font-size: 20px
+                            .description
+                                font-size: 16px
+                        .block:nth-child(1)
+                            width: 10%
+                            img
+                                margin-left: -20px
+                                width: 115px
+                            .title
+                                display: none
+                            .description
+                                display: none
+                        .block:nth-child(2)
+                            width: 80%
+                            margin-right: 0
+                            margin-top: 180px
+                            text-align: center
+                            img
+                                width: 320px
+                                margin-left: -50px
+                            .title
+                                margin-left: 0
+                            .description
+                                margin-left: 0
+                        .block:nth-child(3)
+                            width: 10%
+                            img
+                                width: 115px
+                                margin-left: -70px
+                            .title
+                                display: none
+                            .description
+                                display: none
+        .block-slider.active-1 
+            .slides
+                .slide:nth-child(1)
+                    transform: none
+                    .block:nth-child(1) img
+                        transform: translateY(50px)
+            .current-icon
+                right: 85%
+            .navigation
+                .thumb:nth-child(1)
+                    border-top: 1px solid $orange
+        .block-slider.active-2
+            .slide:nth-child(2)
+                transform: none
+            .current-icon
+                right: 60%
+            .navigation
+                .thumb:nth-child(2)
+                    border-top: 1px solid $orange
+        .block-slider.active-3
+            .current-icon
+                right: 33%
+            .navigation
+                .thumb:nth-child(3)
+                    border-top: 1px solid $orange
+        .block-slider.active-4
+            .current-icon
+                right: 8%
+            .navigation
+                .thumb:nth-child(4)
+                    border-top: 1px solid $orange
+    .wiki
+        height: 1200px
+        &::before
+            height: 40px
+            clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%)
+        &:after
+            background-size: cover
+        &-image
+            width: 70%
+            top: 150px
+            left: 17%
+        &-content
+            top: 600px
+            padding-left: 5%
+            left: auto
+            width: 100%
+            .subtitle
+                font-size: 24px
+                padding-right: 15%
+            .description
+                font-size: 16px
+                line-height: 20px
+                padding-right: 15%
+                margin-bottom: 45px
+            .button-o
+                padding: 15px 50px
+                font-size: 16px
+                
+        &-sniper
+            height: auto
+            width: 80%

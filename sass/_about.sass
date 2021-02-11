@@ -1,0 +1,204 @@
+.abouts
+    height: 100vh
+    padding: 0
+    display: block
+    width: 100%
+    position: relative
+    overflow: hidden
+    &-image
+        display: block
+        width: 100%
+        height: 100%
+        position: absolute
+        left: 0
+        top: 0
+        z-index: -1
+        img
+            width: 100%
+            height: 100%
+    &-title
+        width: 700px
+        position: absolute
+        top: 50%
+        margin-bottom: 80px
+        transform: translateY(-50%)
+        padding-left: 60px
+    &-black
+        height: 110vh
+        width: 100vw
+        clip-path: polygon(0 0, 70% 0, 30% 100%, 0% 100%)
+        background-color: rgba(7, 7, 8, 0.8)
+        z-index: 10
+.about
+    .description
+        background-image: url(../img/src/media-bg.png)
+        background-size: 100%
+        background-repeat: no-repeat
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: 150px 0 250px
+        margin: 0 auto
+        &-img
+            height: 400px
+            max-width: 1047px
+            clip-path: polygon(24.5% 0%, 100% 0%, 76.5% 100%, 0% 100%)
+            display: inline-block
+            img
+                width: 100%
+                height: 100%
+        .img-block
+            position: relative
+        .frame
+            background-size: 100% 100% 
+            position: absolute
+            bottom: 25px
+            right: -45px
+            height: 400px
+            width: 1047px
+            &-gray
+                width: 100%
+                right: -140px
+                bottom: 10px
+                z-index: -1
+        .heading
+            width: 45%
+            display: inline-block
+            margin-bottom: -300px
+            .text
+                font-family: 'Purista Medium'
+                color: #fff
+                margin-bottom: 70px
+                width: 520px
+            .button-o
+                padding: 15px 80px
+    .people-img
+        width: 90%
+        margin-bottom: 70px
+        position: relative
+        img
+            height: 100%
+            width: 100%
+        &::after
+            content: ''
+            position: absolute
+            left: 1%
+            top: 3%
+            display: block
+            width: 68%
+            height: 100%
+            background-image: url('../img/about/block-1.svg')
+            background-size: 100% 100% 
+            background-repeat: no-repeat
+    .helicopters-img
+        width: 90%
+        margin-bottom: 70px
+        float: right
+        img
+            height: 100%
+            width: 100%
+
+
+@media ( max-width: 1600px )
+    .about
+        .description
+            &-img
+                height: 290px
+                width: 750px
+            .frame
+                bottom: -18px
+                right: -40px
+                height: 380px
+                width: 750px
+                &-gray
+                    height: 100%
+                    right: -100px
+                    bottom: 10px
+                    z-index: -1
+            .heading
+                .text
+                    width: 450px
+                .button-o
+                    padding: 15px 60px
+
+@media (max-width: 1400px)
+    .about
+        .description
+            padding: 100px 0 200px
+            &-img
+                height: 260px
+                width: 700px
+            .frame
+                bottom: 5px
+                right: -40px
+                height: 300px
+                width: 700px
+
+@media (max-width: 980px)
+    .abouts-image
+        margin-top: 80px
+        height: 90%
+        width: auto
+        img
+            width: auto
+            transform: translateX(-35%)
+    .abouts-black
+        background-color: transparent
+    .abouts-title
+        padding-left: 0
+        margin: 0 auto
+        width: 100%
+        padding: 0 5%
+        text-align: center
+        top: auto
+        bottom: 0
+    .about
+        .description
+            height: auto
+            background-size: cover
+            padding: 60px 0
+            flex-direction: column
+            justify-content: flex-start
+            .img-block
+                margin-bottom: 60px
+            &-img
+                height: auto
+                width: 95%
+            .frame
+                background-size: 100% 100% 
+                position: absolute
+                bottom: 12px
+                right: 3px
+                height: auto
+                width: 95%
+                &-gray
+                    display: none
+            .heading
+                width: 100%
+                padding: 0 5%
+                margin-bottom: 0
+                .text
+                    width: 100%
+        .people-img
+            width: 100%
+            height: 400px
+            margin-bottom: 50px
+            img
+                height: 100%
+                width: auto
+                position: absolute
+                right: 0
+            &::after
+                left: 3%
+                top: 1%
+                display: block
+                width: 90%
+                height: 90%
+                background-image: url('../img/about/block-1_mobile.svg')
+        .helicopters-img
+            width: 100%
+            height: 320px
+            margin-bottom: 90px
+            img
+                height: 100%
+                width: auto

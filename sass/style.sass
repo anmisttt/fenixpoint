@@ -1,0 +1,60 @@
+@font-face 
+    font-family: 'Purista Semibold'
+    src: url('../fonts/purista-semibold-webfont.woff2') format('woff2')
+    src: url('../fonts/purista-semibold-webfont.woff') format('woff')
+    font-weight: normal
+    font-style: normal
+@font-face 
+    font-family: 'Purista Medium'
+    src: url('../fonts/purista-medium-webfont.woff2') format('woff2')
+    src: url('../fonts/purista-medium-webfont.woff') format('woff')
+    font-weight: normal
+    font-style: normal
+
+img
+    user-select: none
+html
+    scroll-behavior: smooth
+*
+    line-height: 1
+    clear: both
+    font-size: 0
+    box-sizing: border-box
+body
+    width: 100vw
+    height: 100%
+    font-family: 'Purista Semibold'
+    background: #070708
+    overflow-x: hidden
+a
+    text-decoration: none
+    color: black
+    &:hover
+        color: none
+::selection
+    color: #000
+    background-color: #ffa700
+
+@import 'interface'
+@import 'menus'
+@import 'homepage'
+@import 'pages'
+@import 'footer'
+@import 'media'
+@import 'single'
+@import 'single-video'
+@import '404'
+@import 'learn'
+@import 'about'
+@import 'world'
+
+
+// Hot Fixes
+.footer-menus ul.menu li
+    width: max-content
+
+@media (max-width: 980px) 
+    body
+        width: 100vw
+        overflow-x: hidden
+    

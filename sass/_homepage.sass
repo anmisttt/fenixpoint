@@ -1,0 +1,1866 @@
+.main
+    display: flex
+    flex-direction: row
+    justify-content: flex-end
+    width: 100%
+    max-width: 100vw
+    height: 145vh
+    transition: .5s
+    position: relative
+    overflow: hidden
+    &:after
+        content: ''
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 100%
+        height: 50vh
+        background-image: linear-gradient(to bottom, rgba(1, 3, 10, 0), #000000)
+        z-index: 11
+    &-frames
+        .frame
+            position: absolute
+            left: 0
+            top: 0
+            width: 100%
+            height: auto
+        .frame_1
+            z-index: 0
+        .frame_2
+            z-index: 1
+        .frame_3
+            z-index: 2
+        .frame_4
+            z-index: 3
+        .soldier
+            position: absolute
+            height: auto
+            z-index: 5
+            transition: 1.5s
+
+    &-content
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        height: 110vh
+        width: 64vw
+        clip-path: polygon(48% 0, 100% 0%, 100% 100%, 0% 100%)
+        background-color: rgba(7, 7, 8, 0.8)
+        z-index: 9
+        transform: translateX(100%)
+        opacity: 0
+        transition: all .5s ease
+        position: relative
+        .logo
+            position: absolute
+            bottom: 45%
+            display: inline-grid
+            right: 10%
+            font-size: 71px
+            font-weight: bold
+            -webkit-text-stroke: white 2px
+            color: white
+            letter-spacing: 6px
+            text-transform: uppercase
+            user-select: none
+            cursor: pointer
+            transition: all .5s
+        &__active
+            clip-path: polygon(40% 0, 100% 0%, 100% 100%, 0% 100%)
+            width: 75vw
+            height: 99vh
+            .logo
+                right: 15%
+            .main-menu
+                right: 13%
+            .main-blocks
+                right: 15%
+    .main-content.visible
+        opacity: 1
+        transform: translateX(0)
+    &-menu
+        position: absolute
+        right: 8%
+        bottom: 37%
+        transition: all .6s
+        .menu
+            li
+                display: inline-block
+                margin: 0 17.5px
+                .button
+                    display: flex
+                    flex-direction: row
+                    justify-content: center
+                    align-items: center
+                    color: #000
+                    font-size: 16px
+                    width: 295px
+                    height: 45px
+                    max-width: 100%
+                    margin-left: 0
+                    line-height: 40px
+                    text-transform: uppercase
+                    background-size: 100% 100%
+                    background-repeat: no-repeat
+                    position: relative
+                    z-index: 1
+                    img
+                        display: inline
+                        height: 30px
+                        width: auto
+                        vertical-align: bottom
+                        margin-right: 18px
+                        margin-bottom: 4px
+                    &:after
+                        content: ''
+                        position: absolute
+                        left: unset
+                        top: unset
+                        right: -4px
+                        bottom: -4px
+                        display: block
+                        width: 100%
+                        height: 100%
+                        background-size: cover
+                        background-repeat: no-repeat
+                        z-index: 2
+                    &:hover
+                        background-image: url('../img/interface/main-button-b.svg')
+                        color: $orange
+                        img
+                            filter: invert(1)
+                .button-w
+                    background-image: url('../img/interface/main-button-w.svg')
+                    &:after
+                        background: url('../img/interface/main-menu-o.svg')
+                .button-o
+                    background-image: url('../img/interface/main-button-o.svg')
+                    &:after
+                        background: url('../img/interface/main-menu-w.svg')
+                    &:hover:after
+                        background-image: url('../img/interface/main-menu-o.svg')
+    &-blocks
+        display: flex
+        flex-direction: row
+        justify-content: center
+        position: absolute
+        bottom: 15%
+        right: 7%
+        transition: all 0.7s ease
+        a
+            width: 333px
+            height: 173px
+            margin: 0 -36px
+            position: relative
+            &:hover 
+                .title
+                    color: $orange
+                img
+                    transform: scale(1.2)
+        a:before
+            content: ''
+            position: absolute
+            right: -5%
+            top: -7%
+            display: block
+            width: 100%
+            height: 100%
+            background-image: url('../img/interface/corner-main.svg')
+            background-size: 100% 100% 
+            background-repeat: no-repeat
+            z-index: 2
+        a:after
+            content: ''
+            position: absolute
+            right: 3.4%
+            top: 50%
+            display: block
+            width: 9%
+            height: 1px
+            background-color: $orange
+            z-index: 3
+        a:last-child:after
+            display: none
+        .block
+            width: 100%
+            height: 100%
+            clip-path: polygon(30% 0%, 100% 0, 70% 100%, 0% 100%)
+            z-index: 1
+            position: relative
+            &:after
+                content: url('../img/interface/right-arrow.svg')
+                position: absolute
+                right: 26%
+                bottom: 10%
+                color: white
+            &-thumbnail
+                overflow: hidden
+                img
+                    width: 100%
+                    height: 100%
+                    max-width: 100%
+                    transition: all 0.2s
+            &-descr
+                position: absolute
+                bottom: 20%
+                left: -1.5%
+                width: 100%
+                height: 20%
+                padding: 6% 0 8% 16%
+                background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 35%, rgba(0,0,0,0) 100%)
+                color: white
+                span
+                    display: block
+                    width: 100%
+                .title
+                    max-width: 200px
+                    font-size: 16px
+                    text-transform: uppercase
+                    transition: .3s
+                .subtitle
+                    font-size: 9px
+                    text-transform: none
+                    position: relative
+.main.active
+    position: fixed
+    z-index: 5
+.video
+    height: 100vh
+    width: 100%
+    background-color: #000
+    position: relative
+    z-index: 0
+    video
+        outline: none
+        width: auto
+        min-width: 100%
+        height: 100%
+        transform: scaleX(1.15)
+.strategy
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    width: 100%
+    height: 110vh
+    padding-top: 140px
+    background-image: url('../img/homepage/strategy/bg.jpg')
+    background-size: 100% 100%
+    background-repeat: no-repeat
+    position: relative
+    z-index: 1
+    &:before
+        content: ''
+        position: absolute
+        right: 15px
+        top: 0
+        width: 73%
+        height: 100%
+        background: $grey
+        clip-path: polygon(40% 0, 100% 0, 100% 100%, 0% 100%)
+        z-index: 2
+    &:after
+        content: ''
+        position: absolute
+        right: 0
+        top: 0
+        width: 73%
+        height: 100%
+        background: $black
+        clip-path: polygon(40% 0, 100% 0, 100% 100%, 0% 100%)
+        z-index: 2
+    &-content
+        display: flex
+        flex-direction: column
+        justify-content: flex-start
+        align-items: flex-end
+        width: 78%
+        z-index: 5
+        .heading
+            margin-bottom: 115px
+            color: #fff
+            .subtitle
+            .title
+                margin-bottom: 40px
+        .block-slider
+            display: block
+            width: 100%
+            position: relative
+            .slides
+                transform: translateX(-20%)
+                position: relative
+                .slide
+                    height: 440px
+                    clip-path: polygon(31% 0%, 99% 0, 70% 100%, 2% 100%)
+                    position: absolute
+                    top: 0
+                    right: 0
+                    transition: 2s
+                    z-index: 3
+                    img
+                        display: block
+                        height: 100%
+                        width: auto
+                        user-select: none
+                .slide:nth-child(1)
+                    transform: translateX(0%)
+                .slide:nth-child(2)
+                    transform: translateX(-75%)
+                .slide:nth-child(3)
+                    transform: translateX(-150%)
+                &:after
+                    content: ''
+                    position: absolute
+                    background-image: url(../img/homepage/strategy/path.svg)
+                    right: -2.2%
+                    top: 0
+                    display: block
+                    margin-top: -13px
+                    width: 889px
+                    height: 439px
+                    transform: skewX(1deg)
+                    z-index: -1
+            .navigation
+                position: absolute
+                right: 0
+                object.active-frame
+                    transform: translate(-60%, -27px) skewX(-30deg)
+                &-line
+                    display: block
+                    width: 2px
+                    height: 68%
+                    position: absolute
+                    right: 46.5%
+                    top: 8%
+                    transform: skewX(-30deg)
+                    span
+                        position: relative
+                        display: inline-block
+                        left: 0
+                        width: 10px
+                        height: 10px
+                        z-index: 1
+                        background: #fff
+                        transform: skew(30deg) rotateZ(45deg)
+                        &:nth-child(1)
+                            top: -2%
+                        &:nth-child(2)
+                            top: 44%
+                        &:nth-child(3)
+                            top: 86%
+                    .current-icon
+                        background: $orange
+                        z-index: 2
+                        transition: .7s
+                        &:before
+                            content: ''
+                            position: absolute
+                            top: 0
+                            left: -100%
+                            display: block
+                            width: 115px
+                            height: 44px
+                            background-image: url('../img/homepage/strategy/thumb.svg')
+                            background-repeat: no-repeat
+                            background-size: 100% 100%
+                            transform: rotateZ(-45deg) translate(-52px, -43px)
+                    &:after
+                        content: ''
+                        position: absolute
+                        display: block
+                        width: 200px
+                        height: 100%
+                        top: 0
+                        left: -94px
+                        background-image: url('../img/homepage/strategy/line.svg')
+                        background-repeat: no-repeat
+                        background-size: 100% 100%
+            .blocks
+                position: absolute
+                right: -230px
+                top: 15px
+                height: 100%
+                transform: skewX(-30deg)
+                .block
+                    color: #fff
+                    transform: skewX(30deg)
+                    max-width: 350px
+                    margin-bottom: 75px
+                    .title
+                        font-size: 24px
+                        margin-bottom: 15px
+                        transition: .5s
+                    .description
+                        font-size: 16px
+                        padding-right: 15%
+        .block-slider.active-1
+            .slide:nth-child(1)
+                transform: translateX(0%)
+                z-index: 4
+            .slide:nth-child(2)
+                transform: translateX(-75%)
+                z-index: 2
+            .slide:nth-child(3)
+                transform: translateX(-150%)
+                z-index: 2
+            .current-icon
+                top: -18%
+            object.active-frame
+                animation: bounce1 1.3s ease-in alternate
+            .block:nth-child(1)
+                .title
+                    color: $orange
+        .block-slider.active-2
+            .slide:nth-child(1)
+                transform: translateX(-75%)
+                z-index: 2
+            .slide:nth-child(2)
+                transform: translateX(0%)
+                z-index: 4
+            .slide:nth-child(3)
+                transform: translateX(-150%)
+            .current-icon
+                top: 33.5%
+            object.active-frame
+                animation: bounce2 1.3s ease-in alternate
+            .block:nth-child(2)
+                .title
+                    color: $orange
+        .block-slider.active-3
+            .slide:nth-child(1)
+                transform: translateX(-75%)
+                z-index: 2
+            .slide:nth-child(2)
+                transform: translateX(-150%)
+                z-index: 2
+            .slide:nth-child(3)
+                transform: translateX(0%)
+                z-index: 4
+            .current-icon
+                top: 80.7%
+            object.active-frame
+                animation: bounce3 1.3s ease-in alternate
+            .block:nth-child(3)
+                .title
+                    color: $orange
+
+
+@media ( min-width: 961px) and ( max-width: 1920px )
+    @keyframes bounce1
+        0%
+            transform: translate(-60%, -27px) skewX(-30deg)
+        50%
+            transform: translate(-58%, -47px) skewX(-30deg)
+        100%
+            transform: translate(-60%, -27px) skewX(-30deg)
+    @keyframes bounce2
+        0%
+            transform: translate(-60%, -27px) skewX(-30deg)
+        50%
+            transform: translate(-58%, -47px) skewX(-30deg)
+        100%
+            transform: translate(-60%, -27px) skewX(-30deg)
+    @keyframes bounce3
+        0%
+            transform: translate(-60%, -27px) skewX(-30deg)
+        50%
+            transform: translate(-58%, -47px) skewX(-30deg)
+        100%
+            transform: translate(-60%, -27px) skewX(-30deg)
+
+
+@media ( min-width: 961px) and (max-width: 1400px )
+    @keyframes bounce1
+        0%
+            transform: translate(-61%, -27px) skewX(-30deg)
+        50%
+            transform: translate(-59%, -47px) skewX(-30deg)
+        100%
+            transform: translate(-61%, -27px) skewX(-30deg)
+    @keyframes bounce2
+        0%
+            transform: translate(-61%, -27px) skewX(-30deg)
+        50%
+            transform: translate(-59%, -47px) skewX(-30deg)
+        100%
+            transform: translate(-61%, -27px) skewX(-30deg)
+    @keyframes bounce3
+        0%
+            transform: translate(-61%, -27px) skewX(-30deg)
+        50%
+            transform: translate(-59%, -47px) skewX(-30deg)
+        100%
+            transform: translate(-61%, -27px) skewX(-30deg)
+
+.enemy
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    width: 100%
+    height: 110vh
+    background: linear-gradient(to bottom, #d8d8d8 29%, #0e0e0e 73%, #0c0907 73%)
+    position: relative
+    z-index: 2
+    &:before
+        content: ''
+        position: absolute
+        top: -49.5px
+        height: 50px
+        right: 0
+        background-color: #d8d8d8
+        width: 55%
+        clip-path: polygon(2.5% 0, 100% 0, 100% 100%, 0% 100%)
+        z-index: 5
+    &:after
+        content: ''
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 100%
+        max-width: 100vw
+        height: 15vh
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #08070a 50%)
+        z-index: 11
+    .bg
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 100vw
+        height: auto
+        max-width: 100vw
+        user-select: none
+        z-index: 1
+    &-content
+        display: flex
+        flex-direction: column
+        justify-content: flex-start
+        align-items: flex-start
+        z-index: 2
+        .heading
+            margin-left: 10%
+            margin-top: 100px
+            .subtitle
+            .title
+                color: #000
+                margin-bottom: 40px
+        .block-slider
+            display: flex
+            width: 100vw
+            flex-direction: row
+            justify-content: center
+            .navigation
+                position: absolute
+                top: 15%
+                right: 14.5%
+                display: flex
+                flex-direction: row
+                justify-content: center
+                align-items: center
+                align-content: center
+                &-progress
+                    position: absolute
+                    top: 100%
+                    left: -20%
+                .thumb
+                    display: flex
+                    flex-direction: column
+                    justify-content: center
+                    width: 70px
+                    height: 70px
+                    margin: 0 20px
+                    background: transparent
+                    border-radius: 50%
+                    position: relative
+                    transform: translateY(-15px)
+                    transition: .3s
+                    user-select: none
+                    z-index: 1
+                    &:after
+                        content: ''
+                        display: block
+                        width: 10px
+                        height: 10px
+                        background: #000
+                        border: 10px solid unset
+                        position: absolute
+                        bottom: -20px
+                        left: 50%
+                        transform: translateX(-50%) rotate(45deg)
+                        transition: .2s
+                    object
+                        fill: $black
+                        transition: .3s
+                .current-icon
+                    position: absolute
+                    left: 12.5%
+                    top: 80%
+                    display: inline-block
+                    width: 10px
+                    height: 10px
+                    background: $orange
+                    border: 10px solid #000
+                    box-shadow: 0 0 1px $orange
+                    transform: translateX(-50%) rotate(45deg)
+                    z-index: 2
+                    opacity: 0
+                    transition: .5s
+                .current
+                    transform: translateY(-34px)
+                    background: #000
+                    .thumb-icon
+                        filter: invert(73%) sepia(51%) saturate(2878%)
+                    &:after
+                        opacity: 0
+            .slider
+                transform: translateX(-225px)
+                position: relative
+                .slider-wrapper
+                    position: absolute
+                    left: -150px
+                    top: 85px
+                    z-index: 1
+                    user-select: none
+                    &:before
+                        content: ''
+                        position: absolute
+                        display: block
+                        height: 1px
+                        background: #ffa700
+                        width: 50vw
+                        top: 50%
+                        right: 100%
+                    .slider-bg
+                        position: relative
+                        transform: skewX(-30deg)
+                        &:before
+                            content: ''
+                            position: absolute
+                            top: 85%
+                            left: -4px
+                            display: block
+                            height: 31px
+                            width: 9px
+                            background-color: $orange
+                            transition: .5s
+                            animation: beforeAnimation infinite cubic-bezier(.1, .7, 1, 1) 20s alternate
+                        &:after
+                            content: ''
+                            position: absolute
+                            top: 75%
+                            right: -4px
+                            display: block
+                            height: 31px
+                            width: 9px
+                            background-color: $orange
+                            transition: .5s
+                            animation: afterAnimation infinite cubic-bezier(.1,.7, 1, 1) 60s alternate
+                .slides
+                    position: relative
+                    transform: translateX(-75px)
+                    z-index: 1
+                .slide
+                    position: absolute
+                    .slide-content
+                        display: none
+                        z-index: 3
+                        position: absolute
+                        .image
+                            width: 569px
+                            position: relative
+                            img
+                                width: 100%
+                                height: 599px
+                                
+                        .block
+                            position: absolute
+                            top: 50%
+                            left: 123%
+                            display: block
+                            width: 400px
+                            color: #fff
+                            .title
+                                font-size: 24px
+                                margin-bottom: 33px
+                                position: relative
+                                &:after
+                                    content: ''
+                                    position: absolute
+                                    left: 0
+                                    bottom: -16px
+                                    display: block
+                                    height: 1px
+                                    width: 100%
+                                    background-color: $orange
+                            .description
+                                padding-right: 35%
+                                font-family: 'Purista Semibold'
+                                font-size: 16px
+        .block-slider.active-1
+            .current-icon
+                left: 12.5%
+                opacity: 1
+            .thumb:nth-child(1)
+                transform: translateY(-34px)
+                background: #000
+                .thumb-icon
+                    filter: invert(73%) sepia(51%) saturate(2878%)
+                &:after
+                    opacity: 0
+            .slide:nth-child(1) .slide-content
+                display: block
+                opacity: 1
+        .block-slider.active-2
+            .current-icon
+                left: 37.5%
+                opacity: 1
+            .thumb:nth-child(2)
+                transform: translateY(-34px)
+                background: #000
+                .thumb-icon
+                    filter: invert(73%) sepia(51%) saturate(2878%)
+                &:after
+                    opacity: 0
+            .slide:nth-child(2) .slide-content
+                display: block
+                opacity: 1
+        .block-slider.active-3
+            .current-icon
+                left: 62.5%
+                opacity: 1
+            .thumb:nth-child(3)
+                transform: translateY(-34px)
+                background: #000
+                .thumb-icon
+                    filter: invert(73%) sepia(51%) saturate(2878%)
+                &:after
+                    opacity: 0
+            .slide:nth-child(3) .slide-content
+                display: block
+                opacity: 1
+        .block-slider.active-4
+            .current-icon
+                left: 87.5%
+                opacity: 1
+            .thumb:nth-child(4)
+                transform: translateY(-34px)
+                background: #000
+                .thumb-icon
+                    filter: invert(73%) sepia(51%) saturate(2878%)
+                &:after
+                    opacity: 0
+            .slide:nth-child(4) .slide-content
+                display: block
+                opacity: 1
+@keyframes beforeAnimation
+    0%
+        top: 85%
+        animation-delay: 3s
+    20%
+        top: 25%
+        animation-delay: 5s
+    40%
+        top: 75%
+        animation-delay: 3s
+    60%
+        top: 55%
+        animation-delay: 5s
+    100%
+        top: 85%
+        animation-delay: 3s
+@keyframes afterAnimation
+    0%
+        top: 75%
+        animation-delay: 7s
+    20%
+        top: 15%
+        animation-delay: 9s
+    60%
+        top: 55%
+        animation-delay: 3s
+    100%
+        top: 75%
+        animation-delay: 2s
+.allies
+    width: 100%
+    height: 110vh
+    padding-top: 190px
+    position: relative
+    z-index: 3
+    &:after
+        content: ''
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 100%
+        max-width: 100vw
+        height: 15vh
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #08070a 50%)
+        z-index: 11
+    &-content
+        z-index: 2
+        .heading
+            position: absolute
+            top: 15%
+            right: 20%
+            color: #fff
+            z-index: 3
+            width: 380px
+            padding-left: 7%
+            .subtitle
+            .title
+                margin-bottom: 40px
+        .block-slider
+            position: absolute
+            left: 0
+            top: 0
+            width: 100%
+            height: 100%
+            .allies-bg
+                img
+                    position: absolute
+                    display: block
+                    width: 100%
+                    height: 100%
+                    left: 0
+                    top: 0
+                    opacity: 0
+                    transition: .5s
+            .navigation
+                position: absolute
+                top: -35%
+                left: 40%
+                display: flex
+                flex-direction: row
+                justify-content: center
+                align-items: center
+                align-content: center
+                z-index: 3
+                .thumb
+                    display: flex
+                    flex-direction: column
+                    justify-content: center
+                    width: 70px
+                    height: 70px
+                    margin: 0 20px
+                    background: transparent
+                    border-radius: 50%
+                    position: relative
+                    transform: translateY(-15px)
+                    transition: .3s
+                    user-select: none
+                    z-index: 1
+                    &:after
+                        content: ''
+                        display: block
+                        width: 10px
+                        height: 10px
+                        background: #fff
+                        border: 10px solid unset
+                        position: absolute
+                        bottom: -20px
+                        left: 50%
+                        transform: translateX(-50%) rotate(45deg)
+                        transition: .2s
+                    object
+                        fill: $black
+                        transition: .3s
+                .current-icon
+                    position: absolute
+                    left: 12.5%
+                    top: 80%
+                    display: inline-block
+                    width: 10px
+                    height: 10px
+                    background: $orange
+                    border: 10px solid #000
+                    box-shadow: 0 0 1px $orange
+                    transform: translateX(-50%) rotate(45deg)
+                    z-index: 2
+                    opacity: 0
+                    transition: .5s
+                .current
+                    transform: translateY(-34px)
+                    background: #000
+                    .thumb-icon
+                        filter: invert(30%) sepia(51%) saturate(2878%)
+                    &:after
+                        opacity: 0
+            .slider
+                display: block
+                position: relative
+                top: 5%
+                left: 30%
+                .button-o
+                    position: absolute
+                    bottom: 30%
+                    right: 35%
+                .slider-wrapper
+                    position: absolute
+                    left: -150px
+                    top: 140px
+                    z-index: 1
+                    user-select: none
+                    &:before
+                        content: ''
+                        position: absolute
+                        display: block
+                        height: 1px
+                        background: #ffa700
+                        width: 50vw
+                        top: 50%
+                        right: 100%
+                    .navigation-progress
+                        position: absolute
+                        top: 34.1%
+                        left: 0
+                        transform: translateX(23.7%)
+                        &:after
+                            content: ''
+                            display: block
+                            position: absolute
+                            width: 20vw
+                            top: 0
+                            right: 0
+                            height: 1px
+                            background-color: $orange
+                            transform: translateX(100%)
+                    .slider-bg
+                        position: relative
+                        width: 255px
+                        object
+                            width: 100%
+                            height: auto
+                        &:before
+                            content: ''
+                            position: absolute
+                            top: 85%
+                            left: -4px
+                            display: block
+                            height: 31px
+                            width: 9px
+                            background-color: $orange
+                            transition: .5s
+                            animation: beforeAnimation infinite cubic-bezier(.1, .7, 1, 1) 20s alternate
+                        &:after
+                            content: ''
+                            position: absolute
+                            top: 75%
+                            right: -4px
+                            display: block
+                            height: 31px
+                            width: 9px
+                            background-color: $orange
+                            transition: .5s
+                            animation: afterAnimation infinite cubic-bezier(.1,.7, 1, 1) 60s alternate
+                .slides
+                    position: relative
+                    transform: translateX(-75px)
+                    z-index: 1
+                    .button-o
+                        position: absolute
+                        left: 630px
+                        z-index: 40
+                        top: 700px
+                        padding: 20px 60px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        transform: translateX(-60px)
+                .slide
+                    position: absolute
+                    .slide-content
+                        opacity: 0
+                        z-index: 3
+                        position: absolute
+                        transition: .8s
+                        .image
+                            img
+                                width: auto
+                                height: 724px
+                        .block
+                            position: absolute
+                            top: 75%
+                            left: 630px
+                            display: block
+                            width: 420px
+                            color: #fff
+                            z-index: 5
+                            .title
+                                font-size: 24px
+                                margin-bottom: 35px
+                                position: relative
+                                z-index: 5
+                                &:after
+                                    content: ''
+                                    position: absolute
+                                    left: 0
+                                    bottom: -19px
+                                    display: block
+                                    height: 1px
+                                    width: 100%
+                                    background-color: $orange
+                            .description
+                                line-height: 1.31
+                                padding-right: 5%
+                                font-family: 'Purista Semibold'
+                                font-size: 16px
+        .block-slider.active-1
+            .allies-bg img:nth-child(1)
+                opacity: 1
+            .current-icon
+                left: 12.5%
+                opacity: 1
+            .thumb:nth-child(1)
+                transform: translateY(-34px)
+                background: #000
+                .thumb-icon
+                    filter: invert(30%) sepia(51%) saturate(2878%)
+                &:after
+                    opacity: 0
+            .slide:nth-child(1) .slide-content
+                opacity: 1
+        .block-slider.active-2
+            .allies-bg img:nth-child(2)
+                opacity: 1
+            .current-icon
+                left: 37.5%
+                opacity: 1
+            .thumb:nth-child(2)
+                transform: translateY(-34px)
+                background: #000
+                .thumb-icon
+                    filter: invert(30%) sepia(51%) saturate(2878%)
+                &:after
+                    opacity: 0
+            .slide:nth-child(2) .slide-content
+                opacity: 1
+        .block-slider.active-3
+            .allies-bg img:nth-child(3)
+                opacity: 1
+            .current-icon
+                left: 62.5%
+                opacity: 1
+            .thumb:nth-child(3)
+                transform: translateY(-34px)
+                background: #000
+                .thumb-icon
+                    filter: invert(30%) sepia(51%) saturate(2878%)
+                &:after
+                    opacity: 0
+            .slide:nth-child(3) .slide-content
+                opacity: 1
+        .block-slider.active-4
+            .allies-bg img:nth-child(4)
+                opacity: 1
+            .current-icon
+                left: 87.5%
+                opacity: 1
+            .thumb:nth-child(4)
+                transform: translateY(-34px)
+                background: #000
+                .thumb-icon
+                    filter: invert(30%) sepia(51%) saturate(2878%)
+                &:after
+                    opacity: 0
+            .slide:nth-child(4) .slide-content
+                display: block
+                opacity: 1
+.partners
+    display: flex
+    justify-content: center
+    padding-top: 205px
+    background: $black
+    position: relative
+    &:after
+        content: ''
+        position: absolute
+        bottom: -49px
+        height: 51px
+        left: 0
+        background-color: $black
+        width: 43%
+        clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%)
+        z-index: 5
+    &-content
+        margin-bottom: 270px
+        .blocks
+            display: flex
+            flex-direction: row
+            justify-content: space-around
+            align-items: flex-end
+            align-content: flex-end
+            .block
+                display: flex
+                justify-content: center
+                align-items: center
+                flex-direction: column
+                max-width: 20%
+                vertical-align: bottom
+                img
+                    width: 100%
+                    margin-bottom: 30px
+                &-text
+                    color: $light
+                    text-align: center
+.journey
+    display: block
+    height: 98vh
+    width: 100%
+    background-image: url('../img/homepage/journey/journey-bg.jpg')
+    background-size: 100% 100%
+    background-repeat: no-repeat
+    position: relative
+    &-bg
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        user-select: none
+        z-index: 0
+    &-content
+        width: 100%
+        height: 100%
+        z-index: 1
+        position: relative
+        overflow: hidden
+        &:before
+            content: ''
+            display: block
+            width: 100%
+            height: 1px
+            background-color: #000
+            position: absolute
+            top: 60%
+            left: 0
+            z-index: 1
+        .heading
+            position: absolute
+            top: 20%
+            left: 15%
+            z-index: 2
+            .title
+                color: #000
+        .blocks
+            display: flex
+            justify-content: center
+            width: 100%
+            position: absolute
+            top: 43%
+            z-index: 5
+            a
+                width: 705px
+                height: 350px
+                margin: 0 -3.5%
+                position: relative
+                .block
+                    width: 100%
+                    height: 100%
+                    clip-path: polygon(30% 0%, 100% 0, 70% 100%, 0% 100%)
+                    position: relative
+                    &:after
+                        content: ''
+                        position: absolute
+                        clip-path: polygon(30% 0%, 100% 0, 70% 100%, 0% 100%)
+                        width: 100%
+                        height: 100%
+                        bottom: 0
+                        left: 0
+                        background-image: linear-gradient(to bottom, rgba(1, 3, 10, 0) 29%, #000000)
+                        z-index: 2
+                    &-img
+                        position: absolute
+                        left: 0
+                        top: 0
+                        img
+                            display: block
+                            width: 100%
+                            height: 100%
+                .link
+                    position: absolute
+                    left: 40%
+                    bottom: 50px
+                    transform: translateX(-50%)
+                    z-index: 3
+                &:before
+                    content: ''
+                    display: block
+                    background-image: url('../img/homepage/journey/path.svg')
+                    background-repeat: no-repeat
+                    background-size: 100% 100%
+                    position: absolute
+                    top: -3%
+                    left: 2.5%
+                    width: 100%
+                    height: 100%
+                    z-index: -1
+                &:after
+                    content: ''
+                    display: block
+                    background-image: url('../img/homepage/journey/corner.svg')
+                    background-repeat: no-repeat
+                    background-size: 100% 100%
+                    position: absolute
+                    top: -6%
+                    left: 5%
+                    width: 100%
+                    height: 100%
+                    z-index: 1
+.discover
+    display: block
+    width: 100%
+    height: 93vh
+    background: $black
+    position: relative
+    &:before
+        content: ''
+        position: absolute
+        top: -49px
+        height: 51px
+        right: 0
+        background-color: $black
+        width: 30%
+        clip-path: polygon(7.5% 0, 100% 0, 100% 100%, 0% 100%)
+        z-index: 5
+    &-content
+        display: block
+        width: 100%
+        height: 100%
+        .heading
+            position: absolute
+            left: 17%
+            top: 17%
+            .title
+                color: #fff
+        .blocks
+            display: flex
+            flex-direction: row
+            justify-content: center
+            flex-wrap: wrap
+            width: 100%
+            position: absolute
+            top: 35%
+            left: 0
+            &:before
+                content: ''
+                display: block
+                width: 100%
+                height: 1px
+                position: absolute
+                left: 0
+                top: 50%
+                background-color: $orange
+                z-index: 0
+
+            a
+                display: block
+                width: 449px
+                height: 223px
+                margin: 0 -2%
+                position: relative
+                &:before
+                    content: ''
+                    position: absolute
+                    right: -5%
+                    top: -7%
+                    display: block
+                    width: 100%
+                    height: 100%
+                    background-image: url('../img/homepage/discover/corner.svg')
+                    background-size: 100% 100%
+                    background-repeat: no-repeat
+                    z-index: 2
+                .block
+                    display: block
+                    width: 100%
+                    height: 100%
+                    clip-path: polygon(30% 0%, 100% 0, 70% 100%, 0% 100%)
+                    background-size: 100% 100%
+                    background-repeat: no-repeat
+                    position: relative
+                    z-index: 1
+                    &-img
+                        display: block
+                        position: absolute
+                        left: 0
+                        top: 0
+                        width: 100%
+                        height: 100%
+                        z-index: 1
+                        img
+                            display: block
+                            width: 100%
+                            height: 100%
+                    .link
+                        position: absolute
+                        bottom: 25px
+                        left: 40%
+                        transform: translateX(-50%)
+                        z-index: 4
+    .navigation
+        display: block
+        width: 100%
+        height: 230px
+        position: absolute
+        left: 0
+        top: 65%
+        background: url('../img/homepage/discover/navigation.svg')
+        background-size: 100% 100%
+        background-repeat: no-repeat
+        .thumb
+            position: absolute
+            top: 52.5%
+            left: 50%
+            object
+            .thumb-title
+                position: relative
+                bottom: -25px
+                left: 20px
+                font-size: 24px
+                color: $orange
+                text-transform: uppercase
+
+@media ( max-width:  1600px)
+    .main
+        &-content
+            width: 68vw
+            clip-path: polygon(40% 0, 100% 0%, 100% 100%, 0% 100%)
+            .logo
+                bottom: 62%
+                right: 5%
+                font-size: 60px                
+            &__active
+                clip-path: polygon(40% 0, 100% 0%, 100% 100%, 0% 100%)
+                width: 75vw
+                height: 99vh
+                .logo
+                    right: 15%
+                .main-menu
+                    right: 13%
+                .main-blocks
+                    right: 15%
+        &-menu
+            right: 5%
+            bottom: 50%
+            .menu
+                li
+                    .button
+                        width: 255px
+                        height: 45px
+                        img
+                            height: 25px
+                            margin-right: 18px
+                            margin-bottom: -2px
+                        &:after
+                            background-size: 100% 100%
+        &-blocks
+            bottom: 15%
+            right: 7%
+            a
+                width: 280px
+                height: 163px
+                margin: 0 -28px
+            a:before
+                right: -7%
+                top: -13%
+            .block
+                &:after
+                    right: 24%
+                    bottom: 23%
+                &-descr
+                    bottom: 35%
+                    left: 4%
+                    .title
+                        max-width: 160px
+                        font-size: 13px
+                        margin-bottom: 5px
+                    .subtitle
+                        font-size: 7px
+    .strategy
+        height: 1100px
+    .enemy
+        height: 1032px
+    .allies
+        height: 1032px
+    .journey
+        height: 724px
+        &-content
+            .blocks
+                a
+                    width: 540px
+                    height: 270px
+                    margin: 0 -3.5%
+                    position: relative
+    .discover
+        height: 570px
+        &-content 
+            .heading
+                top: 12%
+            .blocks a
+                width: 300px
+                height: 150px
+        .navigation .thumb
+            top: 50%
+@media (max-width:1400px)
+    .strategy
+        &-content
+            width: 80%
+            .heading
+                margin-bottom: 115px
+                color: #fff
+                .subtitle
+                .title
+                    margin-bottom: 40px
+            .block-slider
+                .slides
+                    transform: translateX(-26%)
+                    .slide
+                        height: 350px
+                    &:after
+                        background-size: 100% 100%
+                        right: -2.2%
+                        top: 0
+                        display: block
+                        margin-top: -13px
+                        width: 700px
+                        height: 350px
+                        transform: skewX(1deg)
+                        z-index: -1
+                .navigation
+                    position: absolute
+                    right: 0
+                    object.active-frame
+                        height: 350px
+                        transform: translate(-61%, -27px) skewX(-30deg)
+                    &-line
+                        
+                .blocks
+                    right: -270px
+    .enemy
+        padding-top: 100px
+        height: 978px
+        .bg
+            height: 85%
+        &-content
+            .block-slider
+                transform: translateY(-100px)
+                .navigation
+                    right: 6%
+                    top: 19.5%
+                    transform: translateY(-146px)
+                .slider
+                    .slide
+                        .slide-content
+                            .image
+                                width: 550px
+                                img
+                                    width: 100%
+                                    height: 570px
+                            .block
+                                left: 115%
+    .allies
+        height: 1100px
+        padding-top: 150px
+        &-content
+            .heading
+                top: 12%
+                right: 10%
+            .block-slider
+                .navigation
+                    top: -35%
+                    left: 30%
+                .slider 
+                    .slides .button-o
+                        left: 530px
+                    .slide .slide-content
+                        .image
+                            transform: translate(-100px, 100px)
+                            img
+                                height: 700px
+                        .block
+                            left: 530px
+                            width: 380px
+    
+    
+@media (max-width: 980px)
+    .main
+        margin-top: 310px
+        height: 650px
+        overflow: visible
+        background-color: rgba(7, 7, 8, 0.8)
+        &::after
+            display: none
+        &-frames
+            width: 100%
+            height: 376px
+            position: relative
+            overflow: hidden
+            .soldier
+                height: 350px
+                bottom: -100px
+                left: 15px
+        &-content
+            width: 100%
+            height: 880px
+            clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0% 100%)
+            background: transparent
+            position: absolute
+            top: -230px
+            left: 0
+            text-align: center
+            padding: 0 5%
+            justify-content: start
+            opacity: 1
+            transform: translateX(0)
+            .logo
+                bottom: auto
+                position: static
+                font-size: 30px
+                width: 100%             
+                text-align: center  
+                margin-top: 60px
+        &-menu
+            left: 5%
+            right: auto
+            bottom: auto
+            top: 136px
+            width: 90%
+            z-index: 12
+            .menu
+                li
+                    width: 100%
+                    margin: 0
+                    margin-top: 20px
+                    .button
+                        width: 100%
+                        height: 45px
+                        img
+                            display: inline
+                            height: 30px
+                            width: auto
+                            vertical-align: bottom
+                            margin-right: 18px
+                            margin-top: 5px
+        &-blocks
+            bottom: 5%
+            right: auto
+            left: 5%
+            &.active-1
+                left: 5%
+            &.active-2
+                left: -45%
+            &.active-3
+                left: -100%
+    .video
+        height: 480px
+        overflow: hidden
+        video
+            outline: none
+            width: auto
+            height: 100%
+            transform: translateX(-28%)
+    .strategy
+        padding-top: 50px
+        height: 830px
+        &-content
+            width: 100%
+            padding: 0 5%
+            .heading
+                margin-bottom: 115px
+                color: #fff
+                text-align: center
+                width: 100%
+            .block-slider
+                .slides
+                    transform: translateX(-10%)
+                    .slide
+                        height: 170px
+                    &:after
+                        right: 0
+                        margin-top: -8px
+                        margin-right: -70px
+                        width: 460px
+                        height: 170px
+                .navigation
+                    position: absolute
+                    left: 0
+                    object.active-frame
+                        height: 170px
+                        transform: translate(20%, -15px) skewX(-30deg)
+                    &-line
+                        transform: rotate(270deg)
+                        top: 60%
+                        right: 50%
+                        height: 170%
+                        .thumb
+                            transform: rotate(45deg)
+                        .current-icon
+                            transform: rotate(45deg)
+                            &:before
+                                width: 44px
+                                left: 75px
+                                background-image: url('../img/homepage/strategy/yellow.svg')
+                                transform: rotateZ(-45deg) translate(-52px, -80px)
+                                
+                .blocks
+                    width: 90%
+                    left: 5% 
+                    right: auto
+                    top: 320px
+                    text-align: center
+                    transform: none
+                    .block
+                        transform: none
+                        display: none
+                        .description
+                            padding-right: 0
+            .block-slider.active-1
+                .block:nth-child(1)
+                    display: block
+            .block-slider.active-2
+                .block:nth-child(2)
+                    display: block
+            .block-slider.active-3
+                .block:nth-child(3)
+                    display: block
+    .enemy
+        padding-top: 50px
+        height: 1050px
+        .bg
+            height: 370px
+            bottom: 190px
+        &-content
+            width: 100%
+            overflow: hidden
+            .heading
+                margin: 0 0 320px
+                text-align: center
+                width: 100%
+            .block-slider
+                transform: translateY(-100px)
+                .navigation
+                    margin: 0 auto
+                    max-width: 100%
+                    width: 100%
+                    right: 0
+                    top: 22%
+                    padding: 0
+                    transform: translateY(-146px)
+                    &:after
+                        content: ''
+                        width: 100%
+                        height: 1px
+                        position: absolute
+                        bottom: 0
+                        left: 0
+                        background-color: $orange
+                    .thumb
+                        margin: 0 10px
+                    &-progress
+                        display: none
+                .slider
+                    transform: translateX(-20vw)
+                    .slider-wrapper .slider-bg object
+                        width: 70vw 
+                        margin-left: 25vw                       
+                    .slide
+                        .slide-content
+                            .image
+                                width: 80vw
+                                top: -30px
+                                img
+                                    width: 100%
+                                    height: auto
+                            .block
+                                left: 0
+                                top: 390px
+                                text-align: center
+                                width: 100%
+                                .description
+                                    padding-right: 0
+            .block-slider.active-1
+                .current-icon
+                    left: 17.5%
+            .block-slider.active-2
+                .current-icon
+                    left: 38.5%
+            .block-slider.active-3
+                .current-icon
+                    left: 60.5%
+            .block-slider.active-4
+                .current-icon
+                    left: 82.5%
+        &::before
+            height: 30px
+            width: 35%
+            top: -29.5px
+            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%)
+    .allies
+        padding-top: 0
+        height: 920px
+        &-content
+            width: 100%
+            overflow: hidden
+            .heading
+                margin: 0
+                text-align: center
+                width: 100%
+                top: 50px
+                right: 0
+            .block-slider
+                top: 150px
+                .allies-bg img
+                    height: 650px
+                .slider
+                    top: 10%
+                    left: 0
+                    &:after
+                        display: none
+                    .slides
+                        transform: none
+                        .button-o
+                            left: 50%
+                            top: auto
+                            transform: translate(-49%, 0)
+                            padding: 50px 100px
+                    .slider-wrapper
+                        left: 0
+                        top: 0
+                        width: 100%
+                        &:before
+                            width: 35%;
+                            top: 85%;
+                            right: auto;
+                        .slider-bg
+                            width: 30%
+                            height: 260px
+                            left: 50%
+                            transform: translateX(-50%) translateY(40%)
+                            position: relative
+                            &::before
+                                height: 15px
+                                width: 4px
+                                left: -2px   
+                            &::after
+                                height: 15px
+                                width: 4px
+                                right: -2px                         
+                        .navigation-progress
+                            width: 100%
+                            top: 0
+                            transform: none
+                            &:after
+                                display: none
+                            
+                            .navigation
+                                width: 100%
+                                right: auto
+                                left: 0
+                                top: 0
+                                &:after
+                                    content: ''
+                                    position: absolute
+                                    left: 0
+                                    bottom: 0
+                                    width: 100%
+                                    height: 1%
+                                    background-color: $orange
+                        .navigation-progress > object
+                            display: none
+                    &:after
+                        content: ''
+                        width: 100%
+                        height: 1px
+                        position: absolute
+                        bottom: 0
+                        left: 0
+                        right: auto
+                        background-color: $orange
+                    .thumb
+                        margin: 0 10px
+                    .slide .slide-content 
+                        .block
+                            width: 100vw
+                            padding: 0 15%
+                            left: 0
+                            top: 175%
+                            text-align: center
+                        .image 
+                            transform: translate(30vw, 125px)
+                            img
+                                height: 260px
+    .partners
+        padding-top: 100px
+        &:after
+            bottom: -40px
+            height: 40px
+            width: 33%
+            clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%)
+        &-content
+            margin-bottom: 100px
+            .blocks
+                flex-direction: column
+                align-items: center
+                align-content: center
+                .block
+                    max-width: 80%
+                    margin-bottom: 76px
+                    img
+                        margin-bottom: 24px
+                    &-text
+                        color: #fff
+                        font-size: 14px
+    .journey
+        height: 724px
+        &-content
+            &::before
+                display: none
+            .heading
+                text-align: center
+                width: 90%
+                left: 5%
+                top: 90px
+            .blocks
+                top: 220px
+                flex-direction: column
+                align-items: center
+                a
+                    width: 350px
+                    height: 170px
+                    margin: 15px 15px 15px 0
+                    .link
+                        bottom: 15px
+    .discover
+        height: 1200px
+        &::before
+            top: -39.5px
+            height: 40px
+            width: 80%;
+            clip-path: polygon(9% 0, 100% 0, 100% 100%, 0% 100%);
+        &-content 
+            .heading
+                text-align: center
+                width: 90%
+                left: 5%
+                top: 70px
+            .blocks 
+                flex-direction: column
+                align-items: center
+                top: 250px
+                &::before
+                    top: auto
+                    bottom: -90px
+                a
+                    margin: 15px 15px 15px 0
+                    width: 300px
+                    height: 150px
+                    .block .link
+                        bottom: 15px
+        .navigation 
+            background: transparent
+            top: auto
+            bottom: 0
+            .thumb
+                top: auto
+                left: 30%
+                bottom: 91px

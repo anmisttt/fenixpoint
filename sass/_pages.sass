@@ -1,0 +1,529 @@
+.media
+    padding-top: 65px
+.portal
+    padding-top: 130px
+    .posts-row
+        margin-bottom: 60px
+        border-bottom: 1px solid $orange
+        .quick
+            width: 43%
+            margin-bottom: 30px
+            .block
+                display: flex
+                flex-direction: row
+                width: 100%
+                color: #fff
+                border-bottom: 1px solid #747474
+                margin-bottom: 30px
+                cursor: pointer
+                &-img
+                    display: block
+                    min-width: 290px
+                    max-width: 290px
+                    height: auto
+                    margin-right: 35px
+                    margin-bottom: 55px
+                    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 98%)
+                    overflow: hidden
+                    img
+                        height: 100%
+                        width: 100%
+                &-title
+                    color: #fff
+                    cursor: pointer
+                &-descr
+                    font-size: 16px
+                    line-height: 1.31
+        .descr
+            width: 27%
+            padding-right: 3%
+            &-img
+                margin-bottom: 30px
+                clip-path: polygon(0% 1%, 100% 1%, 100% 90%, 0% 98%)
+                overflow: hidden
+                img
+                    width: 100%
+                    height: auto
+            &-text
+                color: #fff
+                font-size: 18px
+                line-height: 1.31
+                font-weight: 500
+                margin-bottom: 30px
+            &-link
+                display: flex
+                justify-content: flex-end
+                .button
+                    transform: translateX(-50%)
+        .sidebar
+            width: 23%
+            height: max-content
+            padding-left: 4%
+            &:after
+                content: ''
+                display: block
+                height: 100%
+                width: 1px
+                background: #b7b7b7
+                position: absolute
+                left: 12%
+                top: 60px
+            &-social
+                display: flex
+                flex-direction: row
+                justify-content: space-around
+                margin-left: -15px
+                margin-bottom: 60px
+                a
+                    img
+                        width: 50px
+                        height: 50px
+            &-logotypes
+                display: flex
+                flex-direction: column
+                .subtitle
+                    margin-bottom: 30px
+                a
+                    display: block
+                    width: 100%
+                    margin-bottom: 50px
+                    position: relative
+                    img
+                        width: 200px
+                        height: auto
+                    &:after
+                        content: ''
+                        display: block
+                        width: 20px
+                        height: 20px
+                        background-image: url('../img/interface/download.svg')
+                        background-size: 100% 100%
+                        background-repeat: no-repeat
+                        position: absolute
+                        right: 0px
+                        top: 50%
+                        transform: translateY(-50%)
+    .gallery
+        display: flex
+        flex-direction: column
+        border-bottom: 1px solid $orange
+        margin-bottom: 100px
+        .subtitle
+            color: $orange
+            margin-bottom: 30px
+        &-images
+            display: flex
+            flex-direction: row
+            flex-wrap: wrap
+            justify-content: space-between
+            margin-bottom: 60px
+            img
+                display: block
+                width: 23.5%
+                height: auto
+                margin-bottom: 2%
+        .pagination
+            margin-bottom: 70px
+    .page-nav
+        margin-bottom: 120px
+        .thumb
+            border: 1px solid $orange
+            span
+                color: $orange
+.news
+    display: flex
+    flex-direction: column
+    padding-top: 145px
+    .subtitle
+        color: $orange
+    &-top
+        margin: 0 auto
+        width: 76%
+        height: 33.14vw
+        position: relative
+        margin-bottom: 200px
+        &:hover
+            .news-top_bg
+                left: 0%
+        &_bg
+            display: block
+            width: 100%
+            height: 100%
+            position: absolute
+            left: 15%
+            top: -7%
+            transition: .5s
+        &_block
+            display: flex
+            position: relative
+            z-index: 1
+            img
+                width: 100%
+                z-index: 2
+        &_content
+            display: block
+            width: 45%
+            height: 100%
+            position: absolute
+            top: 0 
+            right: 0
+            background: rgba(7, 7, 8, 0.8)
+            clip-path: polygon(68% 0, 100% 0, 100% 100%, 0% 100%)
+            z-index: 3
+            .block
+                display: flex
+                flex-direction: column
+                width: 60%
+                position: absolute
+                bottom: 6%
+                right: 6%
+                color: #fff
+            .title
+                margin-bottom: 20px
+            .descr
+                margin-bottom: 20px
+            .button-o
+                padding: 7px
+                transform: translateX(-20%)
+    &-content
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        margin-bottom: 100px
+        overflow: hidden
+        position: relative
+        .blog
+            width: 70.6%
+            position: relative
+            &:before
+                content: ''
+                display: block
+                width: 100%
+                height: 2px
+                background: $orange
+                position: absolute
+                top: -60px
+                left: 0
+            .subtitle
+                margin-bottom: 30px
+            .items
+                display: flex
+                justify-content: space-between
+                flex-direction: row
+                align-items: flex-start
+                flex-wrap: wrap
+                width: 100%
+                .block
+                    display: inline-block
+                    border-bottom: 1px solid $grey
+                    margin-bottom: 60px
+                    .block-img
+                        clip-path: polygon(0% 1%, 100% 1%, 100% 90%, 0% 98%)
+                        margin-bottom: 30px
+                        img
+                            width: 100%
+                            height: auto
+                    .block-info
+                        display: flex
+                        flex-direction: row
+                        justify-content: space-between
+                        width: 100%
+                        margin-bottom: 15px
+                        .block-info_date
+                            font-size: 9px
+                            color: #606060
+                        .block-info_share
+                    .block-title
+                        font-size: 24px
+                        text-transform: uppercase
+                        color: #fff
+                        margin-bottom: 20px
+                    .block-descr
+                        color: #fff
+                        margin-bottom: 15px
+                    &:nth-child(even)
+                        width: 33%
+                    &:nth-child(odd)
+                        width: 60%
+                    &:nth-child(4n)
+                        transform: translateY(-35%)
+                    &:nth-child(6n)
+                        transform: translateY(-70%)
+                    &:nth-child(7n)
+                        width: 33%
+                        transform: translate(203%, -105%)
+                    &:last-child
+                        margin-bottom: -435px
+        .sidebar
+            width: 23.72%
+            height: auto
+            padding-left: 4%
+            position: relative
+            .subtitle
+                margin-bottom: 60px
+            &:after
+                content: ''
+                display: block
+                height: 100%
+                width: 1px
+                background: #b7b7b7
+                position: absolute
+                left: 0
+                top: 60px
+            &:before
+                content: ''
+                display: block
+                width: 100%
+                height: 2px
+                background: $orange
+                position: absolute
+                top: -60px
+                left: 0
+            &-menu
+                li
+                    margin-bottom: 30px
+                    width: 100%
+                    border-bottom: 1px solid #606060
+                    a
+                        display: block
+                        width: 100%
+                        height: 100%
+                        font-size: 24px
+                        text-transform: uppercase
+                        color: #fff
+                        margin-bottom: 30px
+                        transition: .2s
+                        &:hover
+                            color: $orange
+                        img
+                            width: auto
+                            height: auto
+                            max-width: 70%
+                            display: block
+            &-posts
+                display: flex
+                flex-direction: column
+                .post
+                    display: flex
+                    flex-direction: row
+                    justify-content: space-between
+                    width: 100%
+                    padding-bottom: 30px
+                    margin-bottom: 30px
+                    border-bottom: 1px solid #606060
+                    &-img
+                        display: block
+                        width: 42%
+                        clip-path: polygon(0% 1%, 100% 1%, 100% 90%, 0% 98%)
+                        overflow: hidden
+                        img
+                            height: auto
+                            width: 100%
+                    &-content
+                        display: flex
+                        width: 54%
+                        flex-direction: column
+                        .post-title
+                            font-size: 16px
+                            text-transform: uppercase
+                            color: #fff
+                            margin-bottom: 15px
+                        .post-text
+                            font-size: 14px
+                            color: #fff
+                            max-height: 50px
+                            line-height: 21px
+                            overflow: hidden
+                            margin-bottom: 20px
+                        .post-date
+                            font-size: 9px
+                            color: #606060
+    .pagination
+        padding-bottom: 120px
+        margin-bottom: 120px
+        border-bottom: 1px solid $orange
+    .page-nav
+        margin-bottom: 120px
+        .thumb
+            border: 1px solid $orange
+            span
+                color: $orange
+
+@media (max-width: 1600px)
+    .portal .posts-row
+        .sidebar
+            padding-left: 3%
+            &:after
+                left: 0
+            &-social
+                a
+                    img
+                        width: 40px
+                        height: 40px
+            &-logotypes
+                a
+                    img
+                        width: 160px
+@media (max-width: 1400px)
+    .portal
+        .posts-row
+            padding-bottom: 120px
+            .quick
+                .block
+                    &-img
+                        min-width: 180px
+                        margin-right: 25px
+                        margin-bottom: 30px
+                        img
+                            height: 100%
+                            width: 100%
+                    &-title
+                        font-size: 16px
+                        margin-bottom: 20px
+                    &-descr
+                        font-size: 12px
+                        line-height: 1.2
+            .descr
+                &-text
+                    font-size: 16px
+            .sidebar
+                width: 25%
+                padding-left: 5%
+
+    .news
+        &-top
+            margin-bottom: 150px
+            &_content
+                width: 60%
+                clip-path: polygon(55% 0, 100% 0, 100% 100%, 0% 100%)
+                .block
+                    align-items: flex-start
+                    right: 3%
+                .button-o
+                    padding: 15px 60px
+                    transform: translateX(0)
+@media (max-width: 980px)
+    .news
+        padding-top: 80px
+        &-top
+            width: 100%
+            &_bg
+                height: 150%
+                left: 0
+                top: -10%
+            &_content
+                .block
+                    width: auto
+                    height: auto
+                    bottom: 15px
+                    right: auto
+                    left: 50px
+                    color: #fff
+                    .title
+                        margin-bottom: 0
+                        font-size: 24px
+                    .descr
+                        display: none
+                    .button-o
+                        display: none
+        &-content
+            flex-direction: column
+            margin-bottom: 40px
+            .blog
+                width: 100%
+                padding-top: 30px
+                margin-bottom: 60px
+                &::before
+                    top: 0
+                .subtitle
+                    text-align: center
+                    font-size: 28px
+                    margin-bottom: 60px
+                .items
+                    flex-direction: column
+                    padding: 0 5%
+                    .block:nth-child(n)
+                        transform: none
+                        margin-bottom: 60px
+                        width: 100%
+            .sidebar
+                width: 100%
+                padding: 0 5%
+                &::after
+                    display: none
+                .subtitle
+                    text-align: center
+                    font-size: 28px
+                    margin-bottom: 60px
+        .pagination
+            margin-bottom: 65px
+    .page-nav
+        padding: 0 5%
+        margin-bottom: 60px
+        .thumb
+            width: 27%
+            height: 45px
+            padding: 15px
+    .pagination
+        padding-bottom: 65px
+    .portal
+        padding-top: 100px
+        .posts-row
+            flex-direction: column
+            padding-bottom: 0
+            .col
+                &::before
+                    top: -40px
+            .quick
+                width: 100%
+                padding: 0 5%
+                margin-bottom: 60px
+                .subtitle
+                    text-align: center
+                    font-size: 24px
+                    margin-bottom: 60px
+                .block
+                    flex-direction: column
+                    &-img
+                        max-width: 100%
+                        margin-right: 0
+                    &-text
+                        .block-title
+                            text-align: left
+                            margin-bottom: 16px
+                        .block-descr
+                            font-size: 14px
+                            line-height: 1.4
+                            margin-bottom: 30px
+            .descr
+                width: 100%
+                padding: 0 5%
+                margin-bottom: 120px
+                .subtitle
+                    text-align: center
+                    font-size: 24px
+                    margin-bottom: 60px
+            .sidebar
+                width: 100%
+                padding: 0 5%
+                margin-bottom: 0
+                .subtitle
+                    text-align: center
+                    font-size: 24px
+                    margin-bottom: 60px
+        .gallery
+            margin-bottom: 60px
+            .subtitle
+                text-align: center
+                font-size: 24px
+                margin-bottom: 60px
+            &-images
+                flex-direction: column
+                margin-bottom: 30px
+                img
+                    width: 100%
+                    margin-bottom: 32px
+            .pagination
+                margin-bottom: 0
+        .page-nav
+            margin-bottom: 60px

@@ -1,0 +1,72 @@
+nav.black
+    background-color: #000
+.single
+    background-color: #fff
+    position: relative
+    z-index: 1
+    &::before
+        content: '';
+        display: block;
+        width: 100%;
+        height: 800px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: url(../img/src/light-bg.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-y: -50px;
+        z-index: -1
+    &::after
+        content: '';
+        display: block;
+        width: 100%;
+        height: 800px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(rgba(255,255,255,0.2) 0%,rgba(255,255,255,1) 50%);
+        z-index: -1
+    &-top
+        .single-wrapper
+            display: flex
+            justify-content: space-between
+            align-items: center
+            padding: 40px 0 30px
+        &_links
+            display: flex
+            .facebook
+                margin-right: 30px
+        
+    &-content
+        margin-bottom: 30px
+        padding-top: 30px
+        .title
+            color: #000
+            margin-bottom: 65px
+        .single-wrapper
+            padding-bottom: 80px
+    .network
+        display: flex
+        width: 100px
+        margin: 0 auto
+        padding: 65px 0 0
+        justify-content: space-between
+        div a img
+            width: 40px
+            height: 40px
+        
+@media (max-width: 980px)
+    .single
+        &-top
+            margin-bottom: 50px
+            &_links
+                margin-left: 10px
+                .facebook
+                    margin-right: 15px
+            &_date
+                margin-right: 10px
+                font-size: 14px
+        &-content
+            padding: 0 5%
+            margin-bottom: 0

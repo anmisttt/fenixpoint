@@ -1,0 +1,62 @@
+.single-video
+    padding-top: 90px
+    background-color: #fff
+    background-image: url(../img/src/light-bg.png)
+    background-size: 100%
+    margin-top: 80px
+    background-repeat: no-repeat
+    &_top
+        .single-wrapper
+            padding-bottom: 65px
+            &::after
+                height: 0
+        .main-video
+            width: 100%
+            height: auto
+            position: relative
+            z-index: 1
+            img
+                width: 100%
+                height: auto
+            &::after
+                content: ''
+                position: absolute
+                right: -15%
+                bottom: -15%
+                display: block
+                width: 130%
+                height: 130%
+                background-image: url(../img/single-video/frame-gray.svg)
+                background-size: 100% 100%
+                background-repeat: no-repeat
+                z-index: -1
+        .links
+            display: flex
+            float: right
+            height: 20px
+            margin-top: 10px
+            .facebook
+                margin-right: 30px
+    .network
+        display: flex
+        width: 100px
+        margin: 0 auto
+        padding: 65px 0 0
+        justify-content: space-between
+        div a img
+            width: 40px
+            height: 40px
+
+@media (max-width: 980px)
+    .single-content .single-wrapper
+        padding: 0
+        padding-bottom: 70px
+    .single-video_top .links 
+        margin-top: 20px
+        .facebook
+            margin-right: 15px
+    .single-video 
+        background-size: cover;
+        background-position-y: -600px;
+        
+

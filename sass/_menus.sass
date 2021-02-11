@@ -1,0 +1,196 @@
+.nav
+    position: absolute
+    top: 0
+    left: 0
+    display: flex
+    width: 100%
+    padding-top: 20px
+    padding-bottom: 20px
+    justify-content: space-between
+    z-index: 11
+    transition: .5s
+    opacity: 0
+    transform: translateY(-100%)
+    z-index: 10
+    &-toggle
+        display: none
+    .nav-left
+        padding-left: 60px
+        display: flex
+        justify-content: space-between
+        .logo
+            display: flex
+            margin-right: 60px
+            cursor: pointer
+            img
+                height: auto
+                width: auto
+                max-width: 73px
+        .menu
+            li
+                text-transform: uppercase
+                margin: 0 20px
+    .menu-mobile
+        display: none
+    .menu
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        padding-top: 10px
+        position: relative
+        li
+            position: relative
+            a
+                color: white
+            &:after
+                content: ''
+                position: absolute
+                bottom: -15px
+                left: 0
+                height: 0
+                width: 100%
+                background-color: $orange
+                transition: .3s
+                opacity: 0
+            &:hover:after
+                opacity: 1
+                height: 4px
+        .menu-item-has-children
+            &:before
+                content: ''
+                position: absolute
+                top: 6px
+                right: -15px
+                display: block
+                width: 8px
+                height: 5px
+                background-image: url('../img/interface/arrow-down.svg')
+                transition: .3s
+            &:hover:before
+                transform: rotate(180deg)
+            &:hover .sub-menu
+                display: block
+            .sub-menu
+                position: absolute
+                top: 45px
+                left: -13%
+                display: none
+                li  
+                    width: max-content
+                    min-width: 100%
+                    margin: 0
+                    &:after
+                        display: none
+                    a
+                        display: block
+                        width: 100%
+                        background: $black
+                        padding: 20px
+                        transition: all .2s
+                        &:hover
+                            color: $black
+                            background-color: $orange
+    .menu-buy
+        padding-right: 60px
+        li
+            text-transform: uppercase
+            a
+                color: $orange
+                font-size: 16px
+nav.visible
+    opacity: 1
+    transform: translateY(0)
+
+@media (max-width: 980px)
+    .nav 
+        background-color: #000
+        width: 100vw
+        transition: 0.5s
+        height: 80px
+        z-index: 900
+        .nav-left
+            padding: 0 5%
+            .logo
+                max-height: 40px
+        .menu
+            display: none
+        &-toggle
+            display: block
+            width: 35px
+            height: 30px
+            position: absolute
+            right: 5%
+            top: 20px
+            z-index: 999
+            .line
+                width: 35px
+                height: 2px
+                background-color: $orange
+                position: absolute
+                right: 5%
+                top: 20px
+                &::after, &::before
+                    content: ''
+                    width: 35px
+                    height: 2px
+                    position: absolute
+                    right: 0
+                    background-color: $orange
+                &::before
+                    top: 10px
+                &::after
+                    top: -10px
+        &.active
+            height: 100vh
+            width: 100vw
+            position: fixed
+            top: 0
+            left: 0
+            overflow-y: scroll
+            .menu-mobile
+                display: block
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                padding-top: 80px
+                ul
+                    width: 100%
+                li
+                    padding: 15px 5%
+                    position: relative
+                    a
+                        color: #fff
+                        font-size: 24px
+                        text-transform: uppercase
+                    &:nth-child(4n)
+                        padding-bottom: 40px
+                        &::after
+                            content: ''
+                            width: 100%
+                            height: 1px
+                            background-color: #fff
+                            position: absolute
+                            bottom: 0
+                            left: 0
+                    &:nth-child(4n+1)
+                        padding-top: 40px
+                .footer-links
+                    padding: 40px 5%
+                    position: relative
+                    &::after
+                        content: ''
+                        width: 100%
+                        height: 1px
+                        background-color: #fff
+                        position: absolute
+                        bottom: 0
+                        left: 0
+                .footer-copywrite
+                    padding-top: 30px
+                    text-align: center
+                        
+                        
+                        
+        
+
